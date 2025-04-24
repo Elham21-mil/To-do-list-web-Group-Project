@@ -135,7 +135,7 @@ button {
     margin-right: 10px; /* Space between buttons */
 }
 .container{
-    padding-left: 300px;
+    padding-left: 10px;
 }
 #todo-container {
     display: none; /* Initially hide the to-do container */
