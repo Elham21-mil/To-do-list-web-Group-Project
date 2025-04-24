@@ -1,0 +1,186 @@
+﻿body {
+    background-color: #6c9ccf;
+}
+
+main {
+    padding: 20px;        /* Add padding for content readability */
+    position: relative;     /*Ensure content is above header */
+    z-index: 1;            /* Place the main content above the header */
+}
+
+header {
+    position: fixed;       /* Fixed position to keep it in place */
+    top: 0;
+    left: 0;
+    width: 100%;          /* Cover the entire screen width */
+    height: 100vh;         /* Cover the entire screen height */
+    z-index: -1;         /* Place it behind other content */
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 15vw;       /* Very large font size, relative to viewport width */
+    color: rgba(0, 0, 0, 0.1); /* Semi-transparent text color */
+    text-align: center;   /* Center the text horizontally */
+    line-height: 100vh;   /* Vertically center the text */
+    margin: 0;  
+    transform: rotate(-30deg); /* Rotate the text */
+    transform-origin: 50% 50%;          /* Remove default h1 margin */
+}
+
+h1{
+    font-size: 80px;
+    font-style: normal;
+    color:black;
+    margin-bottom: 0.5;
+    padding-left: 70px;
+    margin-top: 0px;
+}
+.todo-emphasis { /* Apply this class to the <i> tag if you need more styling */
+    font-family: sans-serif;
+    color: rgb(156, 54, 156); /* Example: Change color */
+    font-weight: bold;
+}
+p{
+    font-size: 2em;
+    margin-bottom: 0.3;
+    padding-left: 0cm;
+}
+.top{
+    font-size: 1.2em;
+   text-align: left;
+   margin-top: -103px;
+   margin-right: 3px;
+   padding-left: 26.5cm;
+} 
+.ull{
+    font-size: 18px;
+    padding-left: 210px;
+}
+h3{
+    font-size: 24px;
+    padding-left: 210px; 
+    text-decoration: underline;
+}
+figure{
+    display: flex;
+    width: 600px;
+    height: 300px; 
+    padding-left: 600px;
+   padding-top: 0px;
+    margin-bottom: 0px; 
+}
+figcaption{
+    margin-left: 10px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+.bottom{
+    text-align: bottom;
+   margin-top:0cm;
+   margin-right: 1px;
+   padding-left:22cm ;
+    font-style: italic;
+    font-size: 1.5em;
+}
+.button {
+    display: inline-block;
+    margin: 2px;
+    padding: 7px 15px;
+    margin-left: 10px;
+    margin-top: 0px;
+    font-size: 19px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    background-color:purple;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: rosybrown;
+}
+
+
+/*add page*/
+.add{
+    padding-left: 60px;
+    padding-top: 30px;
+    font-size: 40px;
+}
+
+/* Input field styling */
+#new-task {
+    width: 600px;
+    padding: 8px;
+    margin: 10px 0;
+    background-color: rosybrown;
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button styling */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px; /* Space between buttons */
+}
+.container{
+    padding-left: 300px;
+}
+#todo-container {
+    display: none; /* Initially hide the to-do container */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* To-do list container styling */
+#todo-container {
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+/* Task list styling */
+#task-list {
+    list-style-type: square; /* Remove default bullet points */
+    padding: 0;
+}
+
+/* Individual task item styling */
+#task-list li {
+    width:600px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
+    padding: 7px;
+    margin-bottom: 10px; /* Space between tasks */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between text and remove button */
+}
+
+/* Remove button styling within task items */
+#task-list li button {
+    background-color: #b9434e; /* Red color for remove button */
+}
+
+#task-list li button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+
+
+
+

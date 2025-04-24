@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Today</title>
+    <link rel="stylesheet" href="StyleSheet1NewProject.css">
+</head>
+<body>
+    <header>
+        <h1>Todo Today</h1>
+    </header>
+
+    <h2 class="add">Add Your Lists Here</h2>
+    <a href="Home.html" class="button">Home</a>
+
+    <div class="container">
+        <input type="text" id="new-task" placeholder="Enter new task">
+        <button onclick="addTask()">Add</button><br>
+        <button onclick="showTodoList()">See Your Lists</button>
+        <button onclick="closeTodoList()">Close List</button> <!-- 👈 New Close Button -->
+    </div>
+    
+    <div id="todo-container" style="display: none;">
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        function closeTodoList() {
+    document.getElementById("todo-container").style.display = "none";
+}
+
+        // Load tasks from localStorage on page load
+        window.onload = function () {
+            loadTasks();
+        };
+
+        function showTodoList() {
+            document.getElementById("todo-container").style.display = "block";
+        }
+
+        function addTask() {
+            const taskText = document.getElementById("new-task").value.trim();
+            if (taskText !== "") {
+                const task = {
+                    text: taskText,
+                    id: Date.now()
+                };
+                addTaskToDOM(task);
+                saveTaskToLocalStorage(task);
+                document.getElementById("new-task").value = ""; // Clear input field
+            }
+        }
+
+        function addTaskToDOM(task) {
+            const li = document.createElement("li");
+            li.textContent = task.text;
+            li.setAttribute("data-id", task.id);
+
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.onclick = function () {
+                li.remove();
+                removeTaskFromLocalStorage(task.id);
+            };
+
+            li.appendChild(removeButton);
+            document.getElementById("task-list").appendChild(li);
+        }
+
+        function saveTaskToLocalStorage(task) {
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.push(task);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function removeTaskFromLocalStorage(id) {
+            let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks = tasks.filter(task => task.id !== id);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function loadTasks() {
+            const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+            tasks.forEach(task => {
+                addTaskToDOM(task);
+            });
+        }
+    </script>
+</body>
+</html>
