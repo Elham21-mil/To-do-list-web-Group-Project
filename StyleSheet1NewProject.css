@@ -148,7 +148,7 @@ button:hover {
 /* To-do list container styling */
 #todo-container {
     margin-top: 20px;
-    margin-left: 300px;
+    margin-left: 0px;
 }
 
 /* Task list styling */
