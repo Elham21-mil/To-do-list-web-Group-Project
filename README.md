@@ -25,8 +25,8 @@ This project was created as a group collaboration. It provides users with a clea
 ---
 
 ## 🚀 Live Demo
-🔗 *(https://elham21-mil.github.io/To-do-list-web-Group-Project/)*  
-Example: [View Live](https://elham21-mil.github.io/To-do-list-web-Group-Project/)
+ [View Live] 🔗 *(https://elham21-mil.github.io/To-do-list-web-Group-Project/)*  
+
 ---
 
 ## 💻 Tech Stack
